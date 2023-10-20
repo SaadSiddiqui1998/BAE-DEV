@@ -1,5 +1,5 @@
 {
-  "name": "bae",
+  "name": "vratify",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,8 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "13.5.4"
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@mui/icons-material": "^5.14.13",
+    "@mui/material": "^5.14.13",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.1",
+    "@next/font": "13.1.6",
+    "aos": "^2.3.4",
+    "babel-plugin-macros": "^3.1.0",
+    "bootstrap": "^5.2.3",
+    "next": "13.1.6",
+    "react": "18.2.0",
+    "react-countup": "^6.4.1",
+    "react-dom": "18.2.0",
+    "react-parallax-tilt": "^1.7.95",
+    "react-phone-number-input": "^3.3.6",
+    "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.3",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.0.8"
   }
 }

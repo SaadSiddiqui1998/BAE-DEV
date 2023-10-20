@@ -1,0 +1,22 @@
+.desktop-sidebar {
+    border-right: 1px solid #333333;
+    height: 451px;
+}
+
+.desktop-sidebar__navigation.active,
+.desktop-sidebar__navigation:hover {
+    background-color: rgb(217, 26, 70);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.desktop-sidebar__navigation{
+    padding: 15px;
+    transition: 0.4s ease-in-out;
+    margin-bottom: 5px;
+    cursor: pointer;
+}

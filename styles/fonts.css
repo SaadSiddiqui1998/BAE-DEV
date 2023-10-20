@@ -1,0 +1,21 @@
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../assets/fonts/Font/WEB/fonts/Satoshi-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Satoshi';
+    src: url('/fonts/Satoshi-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+  }
+  

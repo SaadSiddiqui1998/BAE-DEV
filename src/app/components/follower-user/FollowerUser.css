@@ -1,0 +1,30 @@
+/* .follwers-user img {
+    border: 2px solid;
+    border-radius: 40px;
+    padding: 2px;
+} */
+
+.follwers-user {
+    border-bottom: 1px solid #333333;
+    padding-left: 20px;
+}
+
+
+.follwers-user p {
+    font-size: 11px;
+}
+
+.follwers-user--image_inner_container {
+    border-radius: 50%;
+    padding: 2px;
+    /* background: #833ab4; */
+    /* background: -webkit-linear-gradient(to bottom, #fcb045, #fd1d1d, #833ab4); */
+    background: linear-gradient(42deg, #D91A46 51%, #A60F93 83.89%);
+}
+
+.follwers-user--image_inner_container img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: 3px solid #000;
+}

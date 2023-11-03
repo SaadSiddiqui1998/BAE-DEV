@@ -15,7 +15,7 @@ export default function UserProfileTabs() {
 
     return (
         <>
-            <div className='px-4'>
+            <div className='px-0 px-lg-4'>
                 <nav className='user-profile-tabs'>
                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                         <button class="nav-link active" id="nav-gallery-tab" data-bs-toggle="tab" data-bs-target="#nav-gallery" type="button" role="tab" aria-controls="nav-gallery" aria-selected="true">
@@ -52,7 +52,7 @@ export default function UserProfileTabs() {
                     <div class="tab-pane fade show active" id="nav-gallery" role="tabpanel" aria-labelledby="nav-gallery-tab" tabindex="0">
                         <div className="row">
                             {usergalleryObj.map((user) => (
-                                <div key={user.id} className="col-lg-4 user-profile-tabs-gallery mt-4">
+                                <div key={user.id} className="col-6 col-lg-4 user-profile-tabs-gallery mt-0 mt-lg-4 p-0 p-lg-3">
                                     <div className="shadow-sm">
                                         <Image
                                             src={user.image}

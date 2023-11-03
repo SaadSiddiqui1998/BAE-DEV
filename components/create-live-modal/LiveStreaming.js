@@ -3,12 +3,7 @@ import Image from 'next/image'
 import CreateImage from '../../assets/images/create-img.png'
 import UserImg from '../../assets/images/Oval.png'
 import LiveUserImg from '../../assets/images/live-comment-img.png'
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import Box from '@mui/material/Box';
 import Tooltip from '@mui/material/Tooltip';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import Slider from "react-slick";
 
 

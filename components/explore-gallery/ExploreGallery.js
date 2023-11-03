@@ -62,7 +62,7 @@ export default function ExploreGallery() {
     ];
     return (
         <>
-            <div className='explore-gallery px-4'>
+            <div className='explore-gallery px-0 px-lg-4'>
                 {itemData.map((item) => (
                     <div key={item.id} className="explore-gallery-signle-image">
                         <Image

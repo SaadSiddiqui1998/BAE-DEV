@@ -85,7 +85,7 @@ export default function ChatUser() {
     );
     return (
         <>
-            <div className='live-user px-4'>
+            <div className='live-user px-0 px-lg-4'>
                 {liveuserData.map((user) => (
                     <div key={user.id} className="live-user-image">
                         <Link href="/chat">

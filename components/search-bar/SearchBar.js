@@ -151,7 +151,7 @@ export default function SearchBar() {
     ];
     return (
         <>
-            <div className='d-flex align-items-center search-bar gap-3 pt-5 px-4'>
+            <div className='d-flex align-items-center search-bar gap-2 pt-2 pt-lg-5 px-0 px-lg-4'>
                 <div className='search-bar--input'>
                     <Stack spacing={2} sx={{ width: '100%' }}>
                         <Autocomplete
@@ -216,13 +216,6 @@ export default function SearchBar() {
                     transformOrigin={{ horizontal: 'right', vertical: 'top' }}
                     anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
                 >
-                    <MenuItem onClick={handleClose}>
-                        <Avatar /> Profile
-                    </MenuItem>
-                    <MenuItem onClick={handleClose}>
-                        <Avatar /> My account
-                    </MenuItem>
-                    <Divider />
                     <MenuItem onClick={handleClose}>
                         <FormGroup>
                             <FormControlLabel control={<Checkbox defaultChecked />} label="Text" />

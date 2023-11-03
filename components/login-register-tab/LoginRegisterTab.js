@@ -9,8 +9,8 @@ export default function LoginRegisterTab() {
     return (
         <div>
             <div className="custom-login-register-tabs left text-center mb-5">
-                <Link href="/Login" className={`custom-login-register-tabs-switch text-white text-decoration-none ${pathName == '/Login' ? 'active' : ''}`}>Login</Link>
-                <Link href="/Register" className={`custom-login-register-tabs-switch text-white text-decoration-none ${pathName == '/Register' ? 'active' : ''}`}>Register</Link>
+                <Link href="/login" className={`custom-login-register-tabs-switch text-white text-decoration-none ${pathName == '/login' ? 'active' : ''}`}>Login</Link>
+                <Link href="/register" className={`custom-login-register-tabs-switch text-white text-decoration-none ${pathName == '/register' ? 'active' : ''}`}>Register</Link>
             </div>
         </div>
     )

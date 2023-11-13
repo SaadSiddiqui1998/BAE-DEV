@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image'
-import Picker from "emoji-picker-react";
+// import Picker from "emoji-picker-react";
 // import EmojiPicker, { EmojiStyle, Emoji } from "emoji-picker-react";
 import FeedUser from '../../assets/images/feed-user.png'
 import FeedImg from '../../assets/images/feed-img.png'
@@ -20,6 +20,8 @@ import Backdrop from '@mui/material/Backdrop';
 import FormControl from '@mui/material/FormControl';
 import NativeSelect from '@mui/material/NativeSelect';
 import Slider from "react-slick";
+import data from "@emoji-mart/data";
+import Picker from "@emoji-mart/react";
 
 
 // const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -46,16 +48,23 @@ export default function FeedPost() {
   const [inputStr, setInputStr] = useState("");
   const [showPicker, setShowPicker] = useState(false);
   const [isPaidContentVisible, setIsPaidContentVisible] = useState(false);
+  const [showEmoji, setShowEmoji] = useState(false);
+  const [text, setText] = useState("");
+
+  // add emoji
+  const addEmoji = (e) => {
+    const sym = e.unified.split("_");
+    const codeArray = [];
+    sym.forEach((el) => codeArray.push("0x" + el));
+    let emoji = String.fromCodePoint(...codeArray);
+    setText(text + emoji);
+  };
 
   // Paid Content Handle Fucntion
   const handleUnlockClick = () => {
     setIsPaidContentVisible(true);
   };
 
-  const onEmojiClick = (event, emojiObject) => {
-    setInputStr((prevInput) => prevInput + emojiObject.emoji);
-    setShowPicker(false);
-  };
 
   // DropDown Handle Fucntion
   const handleOpenUserMenu = (event) => {
@@ -250,15 +259,24 @@ export default function FeedPost() {
           <input
             type="text"
             placeholder="Add a comment…"
-            value={inputStr}
-            onChange={(e) => setInputStr(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           />
-          <div className='feed-post--emoji' onClick={() => setShowPicker((val) => !val)}>
+          <div className='feed-post--emoji' onClick={() => setShowEmoji(!showEmoji)}>
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M11.8725 8.24774C11.6994 8.24774 11.5302 8.29908 11.3862 8.39525C11.2423 8.49142 11.1301 8.62812 11.0639 8.78805C10.9976 8.94798 10.9803 9.12396 11.0141 9.29375C11.0478 9.46353 11.1312 9.61948 11.2536 9.74189C11.376 9.8643 11.532 9.94765 11.7018 9.98143C11.8715 10.0152 12.0475 9.99786 12.2074 9.93162C12.3674 9.86537 12.5041 9.75319 12.6002 9.60926C12.6964 9.46532 12.7478 9.2961 12.7478 9.12299C12.7478 8.89086 12.6555 8.66824 12.4914 8.5041C12.3273 8.33996 12.1046 8.24774 11.8725 8.24774ZM6.9975 9.12299C6.9975 8.94985 6.94615 8.7806 6.84995 8.63665C6.75374 8.4927 6.617 8.38052 6.45702 8.3143C6.29705 8.24807 6.12103 8.23078 5.95123 8.26462C5.78142 8.29845 5.62547 8.38188 5.50309 8.50436C5.38072 8.62685 5.29742 8.78287 5.26373 8.9527C5.23004 9.12253 5.24748 9.29854 5.31384 9.45846C5.3802 9.61838 5.4925 9.75502 5.63654 9.8511C5.78057 9.94719 5.94986 9.99839 6.123 9.99824C6.355 9.99804 6.57744 9.90574 6.74141 9.74162C6.90539 9.5775 6.9975 9.35499 6.9975 9.12299ZM10.8698 11.553C10.6311 11.8097 10.3422 12.0145 10.021 12.1547C9.69975 12.2949 9.35312 12.3675 9.00265 12.368C8.65217 12.3685 8.30534 12.2968 7.98374 12.1575C7.66214 12.0182 7.37264 11.8142 7.13325 11.5582C7.00834 11.4034 6.82702 11.3045 6.62919 11.2833C6.43137 11.2622 6.23323 11.3205 6.07838 11.4454C5.92353 11.5703 5.82464 11.7516 5.80347 11.9494C5.7823 12.1473 5.84059 12.3454 5.9655 12.5002C6.34534 12.9303 6.81225 13.2746 7.33528 13.5105C7.85831 13.7463 8.4255 13.8683 8.99925 13.8683C9.57301 13.8683 10.1402 13.7463 10.6632 13.5105C11.1863 13.2746 11.6532 12.9303 12.033 12.5002C12.153 12.3455 12.2077 12.15 12.1855 11.9555C12.1633 11.761 12.0659 11.5829 11.9141 11.4592C11.7623 11.3356 11.5682 11.2761 11.3732 11.2937C11.1782 11.3112 10.9978 11.4043 10.8705 11.553H10.8698ZM9 0.377243C7.29414 0.377243 5.62659 0.88309 4.20821 1.83082C2.78984 2.77854 1.68435 4.12559 1.03154 5.7016C0.378737 7.27761 0.207933 9.01181 0.540731 10.6849C0.873528 12.358 1.69498 13.8948 2.90121 15.101C4.10744 16.3073 5.64426 17.1287 7.31735 17.4615C8.99044 17.7943 10.7246 17.6235 12.3006 16.9707C13.8767 16.3179 15.2237 15.2124 16.1714 13.794C17.1192 12.3757 17.625 10.7081 17.625 9.00224C17.6224 6.71554 16.7129 4.52324 15.096 2.9063C13.479 1.28936 11.2867 0.379824 9 0.377243ZM9 16.1272C7.59081 16.1272 6.21327 15.7094 5.04157 14.9265C3.86987 14.1436 2.95664 13.0308 2.41736 11.7289C1.87809 10.4269 1.73699 8.99434 2.01191 7.61223C2.28683 6.23011 2.96542 4.96056 3.96187 3.96411C4.95832 2.96766 6.22787 2.28907 7.60999 2.01415C8.9921 1.73923 10.4247 1.88033 11.7266 2.4196C13.0285 2.95888 14.1413 3.87211 14.9242 5.04381C15.7071 6.21551 16.125 7.59305 16.125 9.00224C16.123 10.8913 15.3717 12.7024 14.0359 14.0382C12.7002 15.374 10.8891 16.1253 9 16.1272Z" fill="white" />
             </svg>
-            {showPicker && (
-              <Picker pickerStyle={{ width: "100%" }} onEmojiClick={onEmojiClick} />
+  
+            {showEmoji && (
+              <div className="emojii-picker-wrapper">
+                <Picker
+                  data={data}
+                  emojiSize={20}
+                  emojiButtonSize={28}
+                  onEmojiSelect={addEmoji}
+                  maxFrequentRows={0}
+                />
+              </div>
             )}
           </div>
         </div>

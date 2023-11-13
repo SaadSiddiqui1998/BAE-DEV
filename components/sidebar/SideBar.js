@@ -133,6 +133,14 @@ export default function SideBar() {
                     />
                     <p className='text-white mb-0'>Profile</p>
                 </Link>
+                <Link className={`desktop-sidebar__navigation d-flex flex-column flex-lg-row justify-content-start align-items-center gap-3 ${pathName == '/marketplace' ? 'active' : ''}`} href="/marketplace">
+                    <Image
+                        src={Icon5}
+                        alt=""
+                        className='img-fluid'
+                    />
+                    <p className='text-white mb-0'>Marketplace</p>
+                </Link>
             </div>
 
 

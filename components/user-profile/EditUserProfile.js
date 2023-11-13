@@ -1,6 +1,28 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from "next/link"
+import { Line } from "react-chartjs-2";
+
+import {
+    Chart as ChartJS,
+    LineElement,
+    CategoryScale, // x axis
+    LinearScale, // y axis
+    PointElement,
+    Legend,
+    Tooltip,
+    Filler,
+} from "chart.js";
+
+ChartJS.register(
+    LineElement,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    Legend,
+    Tooltip,
+    Filler
+);
 import UserProfile from '../../assets/images/user-profile.png'
 import GraphImg from '../../assets/images/graph.png'
 import UserProfileCover from '../../assets/images/user-profile-cover.png'
@@ -17,6 +39,16 @@ import Fade from '@mui/material/Fade';
 import Backdrop from '@mui/material/Backdrop';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+
+
+const salesData = [
+    { month: "January", sales: 100 },
+    { month: "February", sales: 150 },
+    { month: "March", sales: 200 },
+    { month: "April", sales: 120 },
+    { month: "May", sales: 180 },
+    { month: "June", sales: 250 },
+];
 
 
 const style = {
@@ -100,6 +132,83 @@ export default function EditUserProfile() {
         setSelectedImages(updatedImages);
         setImagePreviews(updatedPreviews);
     };
+
+
+    // Line Chart
+    const data = {
+        labels: salesData.map((data) => data.month),
+        datasets: [
+            {
+                label: "Revenue",
+                data: salesData.map((data) => data.sales),
+                borderColor: "#D91A46",
+                borderWidth: 3,
+                pointBorderColor: "#fff",
+                pointBorderWidth: 3,
+                tension: 0.5,
+                fill: false,
+                backgroundColor: (context) => {
+                    const ctx = context.chart.ctx;
+                    const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+                    gradient.addColorStop(0, "#121212");
+                    gradient.addColorStop(1, "#121212");
+                    return gradient;
+                },
+            },
+        ],
+        
+    };
+
+    const options = {
+        plugins: {
+            legend: true,
+        },
+        responsive: true,
+        scales: {
+            y: {
+                ticks: {
+                    font: {
+                        size: 15,
+                        weight: "bold",
+                    },
+                },
+                title: {
+                    display: false,
+                    text: "Sales",
+                    padding: {
+                        bottom: 10,
+                    },
+                    font: {
+                        size: 19,
+                        style: "normal",
+                        family: "Arial",
+                    },
+                },
+                min: 50,
+            },
+            x: {
+                ticks: {
+                    font: {
+                        size: 15,
+                        weight: "bold",
+                    },
+                },
+                title: {
+                    display: false,
+                    text: "Month",
+                    padding: {
+                        top: 10,
+                    },
+                    font: {
+                        size: 15,
+                        style: "normal",
+                        family: "Arial",
+                    },
+                },
+            },
+        },
+    };
+
 
     return (
         <>
@@ -641,11 +750,14 @@ export default function EditUserProfile() {
                                     <button>Premium</button>
                                 </div>
                                 <div>
-                                    <Image
+                                    {/* <Image
                                         src={GraphImg}
                                         alt=""
                                         className='img-fluid mt-4'
-                                    />
+                                    /> */}
+                                    <div className='earning-stats-modal-content-chart'>
+                                        <Line data={data} options={options}></Line>
+                                    </div>
                                 </div>
                                 <hr></hr>
                                 <div>

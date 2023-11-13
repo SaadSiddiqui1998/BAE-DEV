@@ -1984,6 +1984,200 @@ label {
     text-align: center;
 }
 
+.earning-stats-modal-content-chart {
+    width: 640px;
+    height: 400px;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.emojii-picker-wrapper {
+    position: absolute;
+    right: 41px;
+}
+
+/* MarketPlace Page CSS */
+.market-place-card-wrapper {
+    border-radius: 12px;
+    background: #121212;
+    padding: 13px;
+}
+
+.market-place-card-wrapper .card-img {
+    width: 100%;
+}
+
+.market-place-card-wrapper .market-place-card-user h3 {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+}
+
+.market-place-card-wrapper .market-place-card-content h2 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+}
+
+.market-place-card-wrapper .market-place-card-content p {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.6;
+}
+
+.market-place-card-wrapper .market-place-card-content h4 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+}
+
+.market-place-card-wrapper .market-place-card-content button {
+    border-radius: 4.571px;
+    background: linear-gradient(42deg, #D91A46 51%, #A60F93 83.89%);
+    color: #fff;
+    padding: 6px;
+    border: none;
+    width: 91.429px;
+}
+
+.market-place-header--search {
+    position: relative;
+}
+
+.market-place-header--search .market-place-header--search-icon {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+}
+
+.market-place-header--search .form-control {
+    height: 48px;
+    border-radius: 6px;
+    background: #262626;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    padding-left: 40px;
+    width: 315px;
+    position: relative;
+}
+
+.market-place-header h1 {
+    font-size: 24px;
+    font-style: normal;
+    color: #fff;
+    font-weight: 700;
+}
+
+.market-place-pagination .css-r93niq-MuiButtonBase-root-MuiPaginationItem-root {
+    color: #fff;
+    border-color: #fff;
+    opacity: 0.5;
+}
+
+.market-place-pagination .css-r93niq-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected {
+    color: #fff;
+    border-color: #fff;
+    opacity: 1;
+}
+
+.market-place-pagination .css-wjh20t-MuiPagination-ul {
+    justify-content: center;
+}
+
+.market-place-pagination .css-1v2lvtn-MuiPaginationItem-root {
+    color: #fff;
+}
+
+.market-place-details-card {
+    width: 100%;
+}
+
+/* Checkout page CSS */
+
+.checkout-page-content {
+    border-radius: 10px;
+    background: #121212;
+    padding: 25px;
+}
+
+.checkout-page-content h2 {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+}
+
+.checkout-page-content p {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0.6;
+}
+
+.checkout-page-content h3 {
+    font-size: 19.901px;
+    font-style: normal;
+    font-weight: 500;
+    color: #fff;
+}
+
+
+.checkout-page-title h1 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    color: #fff;
+}
+
+
+.checkout-payment-method {
+    background-color: #121212;
+    border-radius: 6px;
+    padding: 20px;
+    fill: #121212;
+    filter: drop-shadow(0px 4px 10px rgba(56, 56, 56, 0.10));
+    margin-top: 57px;
+}
+
+.checkout-payment-method button {
+    border-radius: 8px;
+    background: linear-gradient(42deg, #D91A46 51%, #A60F93 83.89%);
+    border: none;
+    color: #fff;
+    width: 100%;
+    height: 48px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.checkout-payment-method h2 {
+    font-size: 16px;
+    font-style: normal;
+    color: #FFF;
+    font-weight: 500;
+    opacity: 0.6;
+}
+
+.checkout-payment-method h3 {
+    font-size: 19.901px;
+    font-style: normal;
+    font-weight: 500;
+    color: #FFF;
+}
+
+.checkout-border {
+    border-left: 1px solid #333333;
+    height: 72vh;
+}
+
+
 @media (min-width: 280px) and (max-width: 680px) {
     body {
         padding: 0px !important;
@@ -2030,7 +2224,7 @@ label {
         height: auto;
         border-right: none;
         background-color: #121212;
-        z-index: 999999999;
+        z-index: 1;
         width: 100%;
         height: 69px;
         padding-bottom: 14px;
@@ -2202,9 +2396,10 @@ label {
     }
 
     .user-profile--details-close-icon {
-        position: absolute;
-        right: 5px;
-        top: 8px;
+        position: absolute !important;
+        right: 3px !important;
+        top: 21px !important;
+        z-index: 999999999999;
     }
 
     .live-user {
@@ -2357,8 +2552,19 @@ label {
         font-size: 17px;
     }
 
-    .chat-body-wrapper {
-        display: none;
+    .chat-body-wrapper-body-responsive {
+        position: absolute;
+        background: #000;
+        height: 130vh;
+        top: 0;
+        width: 100%;
+        left: 0;
+        right: 0;
+        padding: 20px;
+    }
+
+    .chat-body-wrapper-empty-responsive {
+        display: none !important;
     }
 
     .transaction-list {
@@ -2372,10 +2578,14 @@ label {
     .chat-screen-list {
         height: 544px;
     }
+
     .story-user-slider-modal .css-1wnsr1i {
         position: absolute;
-        top: 54% !important;
+        top: 51% !important;
         left: 50%;
+        width: 99% !important;
+        height: 100% !important;
+        z-index: 9999999999999999;
     }
 
     .story-user-slider-modal .css-1wnsr1i {
@@ -2386,5 +2596,30 @@ label {
         height: auto;
         overflow-y: hidden;
         overflow: hidden;
+    }
+
+    .chat-screen-body .chat-screen-body-footer {
+        width: 91%;
+    }
+
+    .earning-stats-modal-content-chart {
+        width: 460px;
+        height: 225px;
+        padding: 3px;
+        cursor: pointer;
+    }
+
+    .market-place-header--search .form-control {
+        width: 370px;
+    }
+
+    .checkout-border {
+        border: none;
+    }
+
+    .checkout-page-content h2,
+    .checkout-page-content p,
+    .checkout-page-title h1 {
+        text-align: center;
     }
 }
